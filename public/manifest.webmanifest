@@ -1,0 +1,24 @@
+{
+  "name": "Pawprint Visit Cards",
+  "short_name": "Pawprint",
+  "description": "Create private dog-walking visit cards on your phone.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f3ed",
+  "theme_color": "#245e4b",
+  "icons": [
+    {
+      "src": "./pawprint-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./pawprint-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

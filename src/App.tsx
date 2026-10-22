@@ -164,9 +164,9 @@ function App() {
   const handlePhotos = (files: FileList | null) => {
     if (!files?.length) return;
     const imageFiles = Array.from(files).filter((file) => file.type.startsWith('image/'));
-    const spaceLeft = Math.max(0, 6 - visit.photos.length);
+    const spaceLeft = Math.max(0, 10 - visit.photos.length);
     const chosen = imageFiles.slice(0, spaceLeft);
-    if (imageFiles.length > spaceLeft) showToast('A report can include up to 6 photos.');
+    if (imageFiles.length > spaceLeft) showToast('A report can include up to 10 photos.');
     setVisit((current) => ({
       ...current,
       photos: [...current.photos, ...chosen.map((file) => ({ id: crypto.randomUUID(), name: file.name, url: URL.createObjectURL(file) }))],
@@ -275,7 +275,7 @@ function App() {
           <div className="brand-mark"><PawPrint size={21} strokeWidth={2.4} /></div>
           <div>
             <div className="brand-name">pawprint<span>.</span></div>
-            <div className="brand-subtitle">little moments, well cared for</div>
+            <div className="brand-subtitle">happy pets, peace of mind</div>
           </div>
         </div>
         <div className={`privacy-pill ${isActive ? 'is-active' : ''}`}><span className="privacy-dot" />{isActive ? 'Visit live' : 'On this device'}</div>
@@ -418,7 +418,7 @@ function App() {
             <section className="panel photos-panel">
               <div className="panel-heading panel-heading-spread">
                 <div className="heading-cluster"><div className="panel-icon panel-icon-photos"><Camera size={19} /></div><div><h2>Photo moments</h2><p>A picture is worth a thousand tail wags.</p></div></div>
-                <span className="photo-count">{visit.photos.length}/6</span>
+                <span className="photo-count">{visit.photos.length}/10</span>
               </div>
               <input ref={photoInputRef} type="file" accept="image/*" multiple className="visually-hidden" onChange={(event) => handlePhotos(event.target.files)} />
               {visit.photos.length > 0 && (
@@ -426,7 +426,7 @@ function App() {
                   {visit.photos.map((photo) => <div className="photo-thumb" key={photo.id}><img src={photo.url} alt={photo.name} /><button type="button" aria-label={`Remove ${photo.name}`} onClick={() => removePhoto(photo.id)}><X size={15} /></button></div>)}
                 </div>
               )}
-              <button type="button" className="photo-upload" onClick={() => photoInputRef.current?.click()} disabled={visit.photos.length >= 6}>
+              <button type="button" className="photo-upload" onClick={() => photoInputRef.current?.click()} disabled={visit.photos.length >= 10}>
                 <span className="upload-icon"><Plus size={18} /></span><span><strong>{visit.photos.length ? 'Add another photo' : 'Add photos'}</strong><small>Take a new photo or choose from your library</small></span><Upload size={18} className="upload-arrow" />
               </button>
             </section>

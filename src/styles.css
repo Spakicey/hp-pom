@@ -278,7 +278,7 @@ button:disabled { opacity: .52; cursor: not-allowed; }
   .optional-label { font-size: 7px; letter-spacing: .55px; padding: 5px 6px; }
   .notes-input { min-height: 120px; font-size: 12px; }
   .photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .bottom-actions { padding-top: 2px; }
+  .bottom-actions { align-self: center; padding-top: 2px; }
   .button-full { min-height: 50px; font-size: 12px; }
   .utility-row { gap: 4px 12px; margin-top: 14px; }
   .utility-button { font-size: 9px; }
